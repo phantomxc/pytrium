@@ -21,7 +21,7 @@ setup(
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         'Intended Audience :: Developers',
-        'Topic :: Fintech :: API',
+        'Topic :: Software Development :: Libraries :: Python Modules',
 
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.

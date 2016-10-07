@@ -1,5 +1,6 @@
 ENV/
 dist/
+build/
 *.pyc
 *.egg-info
 
