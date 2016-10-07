@@ -1,26 +1,25 @@
 
 def cleanData(key):
 
-  def wrapper(func):
+    def wrapper(func):
 
-    def anotherWrapper(*args, **kwargs):
-      if kwargs.get('payload'):
-        # Wrap our payload with the key provided
-        new_data = {}
-        new_data[key] = kwargs.get('payload')
-        kwargs['payload'] = new_data
-      # Unpack using the same key
-      res = func(*args, **kwargs)[key]
+        def anotherWrapper(*args, **kwargs):
+            if kwargs.get('payload'):
+                # Wrap our payload with the key provided
+                new_data = {}
+                new_data[key] = kwargs.get('payload')
+                kwargs['payload'] = new_data
+            # Unpack using the same key
+            res = func(*args, **kwargs)[key]
 
-      #storigify them
-      if isinstance(res, list):
-        return [storage(r) for r in res]
-      return storage(res)
+            # storigify them
+            if isinstance(res, list):
+                return [storage(r) for r in res]
+                return storage(res)
 
-    return anotherWrapper
+        return anotherWrapper
 
-  return wrapper
-
+    return wrapper
 
 
 class Storage(dict):
