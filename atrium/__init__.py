@@ -1,5 +1,5 @@
-from .api import Api
-from .models.user import User
+from atrium.api import Api
+from atrium.models.user import User
 
 __version__ = "0.1.0"
 
