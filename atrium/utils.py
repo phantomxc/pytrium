@@ -15,7 +15,7 @@ def cleanData(key):
             # storigify them
             if isinstance(res, list):
                 return [storage(r) for r in res]
-                return storage(res)
+            return storage(res)
 
         return anotherWrapper
 
