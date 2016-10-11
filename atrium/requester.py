@@ -7,14 +7,13 @@ from .errors import NetworkError, RequestTimeoutError
 def request(url, method, headers={}, payload={}, options={}):
     try:
         if method == "GET":
-            r = requests.get(url, headers=headers)
+            return requests.get(url, headers=headers)
         elif method == "POST":
-            r = requests.post(url, headers=headers, data=json.dumps(payload))
+            return requests.post(url, headers=headers, data=json.dumps(payload))
         elif method == "PUT":
-            r = requests.put(url, headers=headers, data=json.dumps(payload))
+            return requests.put(url, headers=headers, data=json.dumps(payload))
         elif method == "DELETE":
-            r = requests.delete(url, headers=headers)
-        return r
+            return requests.delete(url, headers=headers)
 
     except requests.exceptions.HTTPError as e:
         raise NetworkError(repr(e))

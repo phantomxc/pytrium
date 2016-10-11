@@ -3,9 +3,9 @@ install_aliases()
 
 from urllib.parse import urlencode
 
-from .utils import cleanData
-from .requester import request
-from .errors import (
+from atrium.utils import cleanData
+from requester import request
+from atrium.errors import (
     BadRequestError,
     ConfigError,
     ConflictError,
@@ -90,8 +90,9 @@ class Api(object):
     # USER
     # --------------------------------------------------
     # @cleanData('users')
-    def getUsers(self):
+    def getUsers(self, queryParams={}):
         url = "users"
+        url = self._buildQueryParams(url, queryParams)
 
         return self._makeRequest(url, "GET")
 
@@ -205,12 +206,12 @@ class Api(object):
 
     @cleanData('member')
     def updateMember(self, userGuid, memGuid, payload={}):
-        url = "users/{}/members/{}/".format(userGuid, memGuid)
+        url = "users/{}/members/{}".format(userGuid, memGuid)
 
         return self._makeRequest(url, "PUT", payload=payload)
 
     def deleteMember(self, userGuid, memGuid):
-        url = "users/{}/members/{}/".format(userGuid, memGuid)
+        url = "users/{}/members/{}".format(userGuid, memGuid)
 
         return self._makeRequest(url, "DELETE")
 
