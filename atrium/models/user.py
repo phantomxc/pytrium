@@ -56,8 +56,9 @@ class User(object):
     # --------------------------------
     # HOLDINGS
     # --------------------------------
+    def getHoldings(self, queryParams={}):
+        return self.api.getHoldings(self.guid, queryParams=queryParams)
+
     def readHolding(self, holdGuid):
         return self.api.readHolding(self.guid, holdGuid)
 
-    def getHoldings(self, queryParams={}):
-        return self.api.getHoldings(self.guid, queryParams=queryParams)
