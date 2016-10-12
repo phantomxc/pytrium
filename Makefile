@@ -12,3 +12,6 @@ publish:
 	python setup.py sdist upload
 	python setup.py bdist_wheel --universal upload 
 
+travis:
+	py.test tests
+	py.test --cov=atrium tests/ --cov-fail-under=95
