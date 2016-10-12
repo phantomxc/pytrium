@@ -240,4 +240,4 @@ This client library wraps all the available endpoints of the MX Atrium API. For 
   Coming Soon
 
 ## License
-[MIT](https://opensource.org/licenses/MIT)
+[MIT](LICENSE.md)
