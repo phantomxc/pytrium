@@ -416,8 +416,17 @@ class TestMemberMethods(unittest.TestCase):
     def testGetMemberStatus(self, request_mock):
         self.api.getMemberStatus('userGuid', 'memGuid')
 
-        request_mock.assert_called_with (
+        request_mock.assert_called_with(
             "users/userGuid/members/memGuid/status",
+            "GET"
+        )
+
+    @patch('atrium.Api._makeRequest')
+    def testGetMemberChallenges(self, request_mock):
+        self.api.getMemberChallenges('userGuid', 'memGuid')
+
+        request_mock.assert_called_with(
+            "users/userGuid/members/memGuid/challenges",
             "GET"
         )
 

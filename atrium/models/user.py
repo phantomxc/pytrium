@@ -31,6 +31,9 @@ class User(object):
     def getMemberStatus(self, memGuid):
         return self.api.getMemberStatus(self.guid, memGuid)
 
+    def getMemberChallenges(self, memGuid):
+        return self.api.getMemberChallenges(self.guid, memGuid)
+
     def aggregateMember(self, memGuid):
         return self.api.startMemberAgg(self.guid, memGuid)
 

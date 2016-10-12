@@ -44,7 +44,11 @@ class TestUser(unittest.TestCase):
 
     def testGetMemberStatus(self):
         self.user.getMemberStatus("memGuid")
-        self.apiMock.getMemberStatus("userGuid", "memGuid")
+        self.apiMock.getMemberStatus.assert_called_with("userGuid", "memGuid")
+
+    def testGetMemberChallenges(self):
+        self.user.getMemberChallenges("memGuid")
+        self.apiMock.getMemberChallenges.assert_called_with("userGuid", "memGuid")
 
     def testAggregateMember(self):
         self.user.aggregateMember("memGuid")

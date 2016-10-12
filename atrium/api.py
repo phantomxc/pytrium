@@ -220,6 +220,12 @@ class Api(object):
 
         return self._makeRequest(url, "GET")
 
+    @cleanData('credentials')
+    def getMemberChallenges(self, userGuid, memGuid):
+        url = "users/{}/members/{}/challenges".format(userGuid, memGuid)
+
+        return self._makeRequest(url, "GET")
+
     @cleanData('member')
     def startMemberAgg(self, userGuid, memGuid):
         url = "users/{}/members/{}/aggregate".format(userGuid, memGuid)
