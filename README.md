@@ -1,3 +1,5 @@
+[![PyPI version](https://badge.fury.io/py/pytrium.svg)](https://badge.fury.io/py/pytrium)
+
 Pytrium
 =======
 
@@ -12,9 +14,11 @@ pip install pytrium
  * requests
  * future
 
+## Documentation
+This client library wraps all the available endpoints of the MX Atrium API. For additional information regarding data attributes, available query parameters, and typical work flows, visit the full documentation at https://atrium.mx.com/documentation
+
 ## Quickstart
 1. First you'll need to create a free developer account at [https://atrium.mx.com](https://atrium.mx.com). This will provide you with a `MX-API-KEY` and `MX-CLIENT-ID`, both of which are required to hit the API. Please keep this information confidential.
-
 
 2. Create your API instance.
   ```python
