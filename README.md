@@ -83,7 +83,7 @@ pip install pytrium
   }
   ```
 
-  This MFA required credentials can also be retrieved with the `getMemberChallenges` method.
+  The MFA required credentials can also be retrieved with the `getMemberChallenges` method.
 
   Resume the aggregation by answering MFA
 
@@ -119,7 +119,7 @@ __Users__:
 | createUser(payload={})| Create a user with the attributes provided in payload. |
 | readUser(userGuid) | Read a user by a user GUID. |
 | updateUser(<br />&nbsp; userGuid,<br />&nbsp; payload={}<br />) | Update a user by its GUID with the attributes provided in payload. |
-| deleteUser(userGuid) | Delete a user by its GUID.
+| deleteUser(userGuid) | Delete a user by its GUID. |
 
 __Transactions__:
 | Method | Description |
@@ -152,7 +152,7 @@ __Members__:
 | getMemberStatus(<br />&nbsp; userGuid, <br />&nbsp; memGuid<br />) | Get the status for a member by user GUID and member GUID. |
 | getMemberChallenges(<br />&nbsp; userGuid, <br />&nbsp; memGuid<br />) | Get a list of challenges for a member by user GUID and member GUID. Returns an empty object if there are no challenges. |
 | startMemberAgg(<br />&nbsp; userGuid, <br />&nbsp; memGuid<br />) | Aggregate a member by user GUID and member GUID. Returns an empty object on success. |
-| resumeMemberAgg(<br />&nbsp; userGuid, <br />&nbsp; memGuid, <br />&nbsp; payload={}<br />) | Resume member aggregation by user GUID and member GUID for when it was challenged. Payload should contain the answered MFA credentials.   |
+| resumeMemberAgg(<br />&nbsp; userGuid, <br />&nbsp; memGuid, <br />&nbsp; payload={}<br />) | Resume member aggregation by user GUID and member GUID for when it was challenged. Payload should contain the answered MFA credentials.|
 
 __Holdings__:
 | Method | Description |
