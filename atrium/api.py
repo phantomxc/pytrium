@@ -4,7 +4,7 @@ install_aliases()
 from urllib.parse import urlencode
 
 from atrium.utils import cleanData
-from requester import request
+from atrium.requester import request
 from atrium.errors import (
     BadRequestError,
     ConfigError,
