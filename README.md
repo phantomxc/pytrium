@@ -113,53 +113,64 @@ This client library wraps all the available endpoints of the MX Atrium API. For 
   api.getAccounts(user['guid'])
   ```
 
-
 ## API Methods
 
-##### Users:
-| Method | Description |
-| -------- | ----------- |
-| getUsers(queryParams={})| Get a list of all the available users. Supports pagination query params. |
-| createUser(payload={})| Create a user with the attributes provided in payload. |
-| readUser(userGuid) | Read a user by a user GUID. |
-| updateUser(<br />&nbsp; userGuid,<br />&nbsp; payload={}<br />) | Update a user by its GUID with the attributes provided in payload. |
-| deleteUser(userGuid) | Delete a user by its GUID. |
+### Users:
+  * #### getUsers(queryParams={})
+    Get a list of all the available users. Supports pagination query params.
+  * #### createUser(payload={})
+    Create a user with the attributes provided in payload.
+  * #### readUser(userGuid)
+    Read a user by a user GUID.
+  * #### updateUser(userGuid, payload={})
+    Update a user by its GUID with the attributes provided in payload.
+  * #### deleteUser(userGuid)
+    Delete a user by its GUID.
 
-##### Transactions:
-| Method | Description |
-| ------ | ----------- |
-| getTransactions(<br />&nbsp; userGuid,<br />&nbsp; queryParams={}<br />)|Get a list of transactions by a user GUID. Supports pagination, and date filtering through query parameters.|
-| getTransactionsByAccount(<br />&nbsp; userGuid,<br />&nbsp; acctGuid,<br />&nbsp; queryParams={}<br />) | Get a list of transactions for a specific account by a user GUID and account GUID. Supports pagination, and date filtering through query parameters.  |
-| readTransaction(<br />&nbsp; userGuid, <br />&nbsp; transGuid<br />) | Read a specific transaction by user GUID and transaction GUID. |
+### Transactions:
+  * #### getTransactions(userGuid, queryParams={})
+    Get a list of transactions by a user GUID. Supports pagination, and date filtering through query parameters.
+  * #### getTransactionsByAccount(userGuid, acctGuid, queryParams={})
+    Get a list of transactions for a specific account by a user GUID and account GUID. Supports pagination, and date filtering through query parameters.
+  * #### readTransaction(userGuid, transGuid)
+    Read a specific transaction by user GUID and transaction GUID.
 
-##### Accounts:
-| Method | Description |
-| ------ | ----------- |
-| getAccounts(<br />&nbsp; userGuid, <br />&nbsp; queryParams={}<br />) | Get a list of accounts by a user GUID. Supports pagination query parameters. |
-| readAccount(<br />&nbsp; userGuid, <br />&nbsp; acctGuid<br />) | Read a specific account by a user GUID and account GUID. |
+### Accounts:
+  * #### getAccounts(userGuid, queryParams={})
+    Get a list of accounts by a user GUID. Supports pagination query parameters.
+  * #### readAccount(userGuid, acctGuid)
+    Read a specific account by a user GUID and account GUID.
 
-##### Institutions:
-| Method | Description |
-| ------ | ----------- |
-| getInstitutions(queryParams={}) | Get a list of institutions. Supports pagination query params and searching by name.  |
-| readInstitution(instGuid) | Read a specific institution by the institution GUID. |
-| getCredentials(instGuid) | Get a list of required credentials by the institution GUID. |
+### Institutions:
+  * #### getInstitutions(queryParams={})
+    Get a list of institutions. Supports pagination query params and searching by name.
+  * #### readInstitution(instGuid)
+    Read a specific institution by the institution GUID.
+  * #### getCredentials(instGuid)
+    Get a list of required credentials by the institution GUID.
 
-##### Members:
-| Method | Description |
-| ------ | ----------- |
-| getMembers(<br />&nbsp; userGuid, <br />&nbsp; queryParams={}<br />) | Get a list of members by a user GUID. Supports pagination query parameters. |
-| createMember(<br />&nbsp; userGuid, <br />&nbsp; payload={}<br />) | Create a member for a user by user GUID with attributes provided in payload. |
-| readMember(<br />&nbsp; userGuid, <br />&nbsp; memGuid<br />) | Read a member by user GUID and member GUID. |
-| updateMember(<br />&nbsp; userGuid, <br />&nbsp; memGuid, <br />&nbsp; payload={}<br />) | Update a member by user GUID and member GUID with attributes provided in payload. |
-| deleteMember(<br />&nbsp; userGuid, <br />&nbsp; memGuid<br />) | Delete a member by user GUID and member GUID. |
-| getMemberStatus(<br />&nbsp; userGuid, <br />&nbsp; memGuid<br />) | Get the status for a member by user GUID and member GUID. |
-| getMemberChallenges(<br />&nbsp; userGuid, <br />&nbsp; memGuid<br />) | Get a list of challenges for a member by user GUID and member GUID. Returns an empty object if there are no challenges. |
-| startMemberAgg(<br />&nbsp; userGuid, <br />&nbsp; memGuid<br />) | Aggregate a member by user GUID and member GUID. Returns an empty object on success. |
-| resumeMemberAgg(<br />&nbsp; userGuid, <br />&nbsp; memGuid, <br />&nbsp; payload={}<br />) | Resume member aggregation by user GUID and member GUID for when it was challenged. Payload should contain the answered MFA credentials.|
+### Members:
+  * #### getMembers(userGuid, queryParams={})
+    Get a list of members by a user GUID. Supports pagination query parameters.
+  * #### createMember(userGuid, payload={})
+    Create a member for a user by user GUID with attributes provided in payload.
+  * #### readMember(userGuid, memGuid)
+    Read a member by user GUID and member GUID.
+  * #### updateMember(userGuid, memGuid, payload={})
+    Update a member by user GUID and member GUID with attributes provided in payload.
+  * #### deleteMember(userGuid, memGuid)
+    Delete a member by user GUID and member GUID.
+  * #### getMemberStatus(userGuid, memGuid)
+    Get the status for a member by user GUID and member GUID.
+  * #### getMemberChallenges(userGuid, memGuid)
+    Get a list of challenges for a member by user GUID and member GUID. Returns an empty object if there are no challenges.
+  * #### startMemberAgg(userGuid, memGuid)
+    Aggregate a member by user GUID and member GUID. Returns an empty object on success.
+  * #### resumeMemberAgg(userGuid, memGuid, payload={})
+    Resume member aggregation by user GUID and member GUID for when it was challenged. Payload should contain the answered MFA credentials.
 
-##### Holdings:
-| Method | Description |
-| ------ | ----------- |
-| getHoldings(<br />&nbsp; userGuid, <br />&nbsp; queryParams={}<br />) | Get a list of holdings by user GUID. Supports pagination query parameters. |
-| readHolding(<br />&nbsp; userGuid, <br />&nbsp; holdGuid<br />) | Read a holding by user GUID and holding GUID. |
+### Holdings:
+  * #### getHoldings(userGuid, queryParams={})
+    Get a list of holdings by user GUID. Supports pagination query parameters.
+  * #### readHolding(userGuid, holdGuid)
+    Read a holding by user GUID and holding GUID.
