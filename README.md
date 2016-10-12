@@ -116,61 +116,104 @@ This client library wraps all the available endpoints of the MX Atrium API. For 
 ## API Methods
 
 ### Users:
-  * #### getUsers(queryParams={})
+  * **_getUsers(queryParams={})_**
+
     Get a list of all the available users. Supports pagination query params.
-  * #### createUser(payload={})
+
+  * **_createUser(payload={})_**
+
     Create a user with the attributes provided in payload.
-  * #### readUser(userGuid)
+
+  * **_readUser(userGuid)_**
+
     Read a user by a user GUID.
-  * #### updateUser(userGuid, payload={})
+
+  * **_updateUser(userGuid, payload={})_**
+
     Update a user by its GUID with the attributes provided in payload.
-  * #### deleteUser(userGuid)
+
+  * **_deleteUser(userGuid)_**
+
     Delete a user by its GUID.
 
 ### Transactions:
-  * #### getTransactions(userGuid, queryParams={})
+  * **_getTransactions(userGuid, queryParams={})_**
+
     Get a list of transactions by a user GUID. Supports pagination, and date filtering through query parameters.
-  * #### getTransactionsByAccount(userGuid, acctGuid, queryParams={})
+
+  * **_getTransactionsByAccount(userGuid, acctGuid, queryParams={})_**
+
     Get a list of transactions for a specific account by a user GUID and account GUID. Supports pagination, and date filtering through query parameters.
-  * #### readTransaction(userGuid, transGuid)
+
+  * **_readTransaction(userGuid, transGuid)_**
+
     Read a specific transaction by user GUID and transaction GUID.
 
 ### Accounts:
-  * #### getAccounts(userGuid, queryParams={})
+  * **_getAccounts(userGuid, queryParams={})_**
+
     Get a list of accounts by a user GUID. Supports pagination query parameters.
-  * #### readAccount(userGuid, acctGuid)
+
+  * **_readAccount(userGuid, acctGuid)_**
+
     Read a specific account by a user GUID and account GUID.
 
+
 ### Institutions:
-  * #### getInstitutions(queryParams={})
+  * **_getInstitutions(queryParams={})_**
+
     Get a list of institutions. Supports pagination query params and searching by name.
-  * #### readInstitution(instGuid)
+
+  * **_readInstitution(instGuid)_**
+
     Read a specific institution by the institution GUID.
-  * #### getCredentials(instGuid)
+
+  * **_getCredentials(instGuid)_**
+
     Get a list of required credentials by the institution GUID.
 
 ### Members:
-  * #### getMembers(userGuid, queryParams={})
+  * **_getMembers(userGuid, queryParams={})_**
+
     Get a list of members by a user GUID. Supports pagination query parameters.
-  * #### createMember(userGuid, payload={})
+
+  * **_createMember(userGuid, payload={})_**
+
     Create a member for a user by user GUID with attributes provided in payload.
-  * #### readMember(userGuid, memGuid)
+
+  * **_readMember(userGuid, memGuid)_**
+
     Read a member by user GUID and member GUID.
-  * #### updateMember(userGuid, memGuid, payload={})
+
+  * **_updateMember(userGuid, memGuid, payload={})_**
+
     Update a member by user GUID and member GUID with attributes provided in payload.
-  * #### deleteMember(userGuid, memGuid)
+
+  * **_deleteMember(userGuid, memGuid)_**
+
     Delete a member by user GUID and member GUID.
-  * #### getMemberStatus(userGuid, memGuid)
+
+  * **_getMemberStatus(userGuid, memGuid)_**
+
     Get the status for a member by user GUID and member GUID.
-  * #### getMemberChallenges(userGuid, memGuid)
+
+  * **_getMemberChallenges(userGuid, memGuid)_**
+
     Get a list of challenges for a member by user GUID and member GUID. Returns an empty object if there are no challenges.
-  * #### startMemberAgg(userGuid, memGuid)
+
+  * **_startMemberAgg(userGuid, memGuid)_**
+
     Aggregate a member by user GUID and member GUID. Returns an empty object on success.
-  * #### resumeMemberAgg(userGuid, memGuid, payload={})
+
+  * **_resumeMemberAgg(userGuid, memGuid, payload={})_**
+
     Resume member aggregation by user GUID and member GUID for when it was challenged. Payload should contain the answered MFA credentials.
 
 ### Holdings:
-  * #### getHoldings(userGuid, queryParams={})
+  * **_getHoldings(userGuid, queryParams={})_**
+
     Get a list of holdings by user GUID. Supports pagination query parameters.
-  * #### readHolding(userGuid, holdGuid)
+
+  * **_readHolding(userGuid, holdGuid)_**
+
     Read a holding by user GUID and holding GUID.
