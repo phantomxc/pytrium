@@ -1,4 +1,4 @@
-[![PyPI version](https://badge.fury.io/py/pytrium.svg)](https://badge.fury.io/py/pytrium)
+[![PyPI version](https://badge.fury.io/py/pytrium.svg)](https://badge.fury.io/py/pytrium) [![Build Status](https://travis-ci.org/phantomxc/pytrium.svg?branch=master)](https://travis-ci.org/phantomxc/pytrium)
 
 Pytrium
 =======
