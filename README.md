@@ -5,6 +5,23 @@ Pytrium
 
 Pytrium is a Python 2/3 client library for the MX Atrium API.
 
+## Table of Contents
+
+- [pytrium](#pytrium)
+  * [Installation](#installation)
+  * [Requires](#requires)
+  * [Documentation](#documentation)
+  * [Quickstart](#quickstart)
+  * [Api Methods](#api-methods)
+    + [Users](#users)
+    + [Transactions](#transactions)
+    + [Accounts](#accounts)
+    + [Institutions](#institutions)
+    + [Members](#members)
+    + [Holdings](#holdings)
+  * [Contribute](#contribute)
+  * [License](#license)
+
 ## Installation
 ```
 pip install pytrium
@@ -217,3 +234,10 @@ This client library wraps all the available endpoints of the MX Atrium API. For 
   * **_readHolding(userGuid, holdGuid)_**
 
     Read a holding by user GUID and holding GUID.
+
+## Contribute
+
+  Coming Soon
+
+## License
+[MIT][https://opensource.org/licenses/MIT]
