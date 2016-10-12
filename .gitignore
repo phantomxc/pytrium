@@ -1,7 +1,9 @@
 ENV/
 dist/
 build/
+cov_html/
 .cache/
+.coverage
 *.pyc
 *.egg-info
 

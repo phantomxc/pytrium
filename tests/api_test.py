@@ -21,6 +21,7 @@ from atrium.errors import (
     UnprocessableEntityError
 )
 
+
 class TestApiInit(unittest.TestCase):
 
     def test_init_no_key(self):
@@ -464,6 +465,7 @@ class TestHoldingMethods(unittest.TestCase):
     def testReadAccounts(self, request_mock):
         self.api.readHolding("userGuid", "holdGuid")
         request_mock.assert_called_with("users/userGuid/holdings/holdGuid", "GET")
+
 
 
 if __name__ == '__main__':

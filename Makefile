@@ -1,6 +1,9 @@
 init:
 	pip install -r requirements.txt
 
+coverage:
+	py.test --cov-report html:cov_html --cov=atrium tests/
+
 test:
 	py.test tests
 

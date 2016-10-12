@@ -45,7 +45,6 @@ class Api(object):
         }
 
     def _makeRequest(self, endpoint, method, payload={}):
-
         full_url = self.root + endpoint
         headers = self._buildHeaders()
 

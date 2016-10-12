@@ -1,8 +1,7 @@
 import json
 import requests
 
-from .errors import NetworkError, RequestTimeoutError
-
+from atrium.errors import NetworkError, RequestTimeoutError
 
 def request(url, method, headers={}, payload={}, options={}):
     try:
