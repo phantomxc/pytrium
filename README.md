@@ -112,7 +112,7 @@ pip install pytrium
 
 ## API Methods
 
-__Users__:
+##### Users:
 | Method | Description |
 | -------- | ----------- |
 | getUsers(queryParams={})| Get a list of all the available users. Supports pagination query params. |
@@ -121,27 +121,27 @@ __Users__:
 | updateUser(<br />&nbsp; userGuid,<br />&nbsp; payload={}<br />) | Update a user by its GUID with the attributes provided in payload. |
 | deleteUser(userGuid) | Delete a user by its GUID. |
 
-__Transactions__:
+##### Transactions:
 | Method | Description |
 | ------ | ----------- |
 | getTransactions(<br />&nbsp; userGuid,<br />&nbsp; queryParams={}<br />)|Get a list of transactions by a user GUID. Supports pagination, and date filtering through query parameters.|
 | getTransactionsByAccount(<br />&nbsp; userGuid,<br />&nbsp; acctGuid,<br />&nbsp; queryParams={}<br />) | Get a list of transactions for a specific account by a user GUID and account GUID. Supports pagination, and date filtering through query parameters.  |
 | readTransaction(<br />&nbsp; userGuid, <br />&nbsp; transGuid<br />) | Read a specific transaction by user GUID and transaction GUID. |
 
-__Accounts__:
+##### Accounts:
 | Method | Description |
 | ------ | ----------- |
 | getAccounts(<br />&nbsp; userGuid, <br />&nbsp; queryParams={}<br />) | Get a list of accounts by a user GUID. Supports pagination query parameters. |
 | readAccount(<br />&nbsp; userGuid, <br />&nbsp; acctGuid<br />) | Read a specific account by a user GUID and account GUID. |
 
-__Institutions__:
+##### Institutions:
 | Method | Description |
 | ------ | ----------- |
 | getInstitutions(queryParams={}) | Get a list of institutions. Supports pagination query params and searching by name.  |
 | readInstitution(instGuid) | Read a specific institution by the institution GUID. |
 | getCredentials(instGuid) | Get a list of required credentials by the institution GUID. |
 
-__Members__:
+##### Members:
 | Method | Description |
 | ------ | ----------- |
 | getMembers(<br />&nbsp; userGuid, <br />&nbsp; queryParams={}<br />) | Get a list of members by a user GUID. Supports pagination query parameters. |
@@ -154,7 +154,7 @@ __Members__:
 | startMemberAgg(<br />&nbsp; userGuid, <br />&nbsp; memGuid<br />) | Aggregate a member by user GUID and member GUID. Returns an empty object on success. |
 | resumeMemberAgg(<br />&nbsp; userGuid, <br />&nbsp; memGuid, <br />&nbsp; payload={}<br />) | Resume member aggregation by user GUID and member GUID for when it was challenged. Payload should contain the answered MFA credentials.|
 
-__Holdings__:
+##### Holdings:
 | Method | Description |
 | ------ | ----------- |
 | getHoldings(<br />&nbsp; userGuid, <br />&nbsp; queryParams={}<br />) | Get a list of holdings by user GUID. Supports pagination query parameters. |
