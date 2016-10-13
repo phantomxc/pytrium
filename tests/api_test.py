@@ -195,7 +195,8 @@ class TestBuildQueryParams(unittest.TestCase):
             "foo": "bar",
             "baz": "bud"
         })
-        self.assertEqual(res, "foo?foo=bar&baz=bud")
+        # Python 3 doesn't return the args in the same order
+        self.assertIn(res, ["foo?foo=bar&baz=bud", "foo?baz=bud&foo=bar"])
 
 
 class TestUserCrudMethods(unittest.TestCase):
