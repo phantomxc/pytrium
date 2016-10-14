@@ -50,10 +50,28 @@ class TestApiHeaders(unittest.TestCase):
 
 
     def test_buildHeaders(self):
-        headers = self.api._buildHeaders()
+        headers = self.api._buildHeaders("GET")
         self.assertEqual(headers, {
             "MX-API-KEY": "foo",
             "MX-CLIENT-ID": "bar",
+            "Accept": "application/vnd.mx.atrium.v1+json"
+        })
+
+    def test_buildHeadersPost(self):
+        headers = self.api._buildHeaders("POST")
+        self.assertEqual(headers, {
+            "MX-API-KEY": "foo",
+            "MX-CLIENT-ID": "bar",
+            "Accept": "application/vnd.mx.atrium.v1+json",
+            "Content-Type": "application/json"
+        })
+
+    def test_buildHeadersPut(self):
+        headers = self.api._buildHeaders("PUT")
+        self.assertEqual(headers, {
+            "MX-API-KEY": "foo",
+            "MX-CLIENT-ID": "bar",
+            "Accept": "application/vnd.mx.atrium.v1+json",
             "Content-Type": "application/json"
         })
 

@@ -37,16 +37,21 @@ class Api(object):
         # self.root = "https://atrium.moneydesktop.com/api/"
         self.root = "https://qa-harvey.moneydesktop.com/api/"
 
-    def _buildHeaders(self):
-        return {
+    def _buildHeaders(self, method):
+        headers = {
             "MX-API-KEY": self.key,
             "MX-CLIENT-ID": self.client_id,
-            "Content-Type": "application/json"
+            "Accept": "application/vnd.mx.atrium.v1+json"
         }
+
+        if method in ['POST', 'PUT']:
+            headers['Content-Type'] = 'application/json'
+
+        return headers
 
     def _makeRequest(self, endpoint, method, payload={}):
         full_url = self.root + endpoint
-        headers = self._buildHeaders()
+        headers = self._buildHeaders(method)
 
         r = request(full_url, method, headers=headers, payload=payload)
 
