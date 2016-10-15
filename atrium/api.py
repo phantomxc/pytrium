@@ -34,8 +34,7 @@ class Api(object):
         if not self.client_id:
             raise ConfigError('Missing client_id (MX-CLIENT-ID)')
 
-        # self.root = "https://atrium.moneydesktop.com/api/"
-        self.root = "https://qa-harvey.moneydesktop.com/api/"
+        self.root = "https://atrium.mx.com/"
 
     def _buildHeaders(self, method):
         headers = {
