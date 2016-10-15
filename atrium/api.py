@@ -44,8 +44,8 @@ class Api(object):
             "Accept": "application/vnd.mx.atrium.v1+json"
         }
 
-        if method in ['POST', 'PUT']:
-            headers['Content-Type'] = 'application/json'
+        if method in ["POST", "PUT"]:
+            headers["Content-Type"] = "application/json"
 
         return headers
 
