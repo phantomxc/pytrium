@@ -15,6 +15,7 @@ from atrium.errors import (
     ConflictError,
     MaintenanceError,
     MethodNotAllowedError,
+    NotAcceptable,
     NotFoundError,
     ServerError,
     UnauthorizedError,
@@ -130,6 +131,13 @@ class TestMakeRequest(unittest.TestCase):
         with pytest.raises(MethodNotAllowedError) as e:
             requesterMock.request.return_value = storage({
                 "status_code": 405
+            })
+            self.api._makeRequest(self.url, self.method)
+
+    def test406(self):
+        with pytest.raises(NotAcceptable) as e:
+            requesterMock.request.return_value = storage({
+                "status_code": 406
             })
             self.api._makeRequest(self.url, self.method)
 

@@ -11,6 +11,7 @@ from atrium.errors import (
     ConflictError,
     MaintenanceError,
     MethodNotAllowedError,
+    NotAcceptable,
     NotFoundError,
     ServerError,
     UnauthorizedError,
@@ -64,6 +65,8 @@ class Api(object):
         elif status == 405:
             msg = '{} is not allowed on {}'.format(method, endpoint)
             raise MethodNotAllowedError(msg)
+        elif status == 406:
+            raise NotAcceptable()
         elif status == 409:
             raise ConflictError()
         elif status == 422:

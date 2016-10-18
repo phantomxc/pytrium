@@ -26,6 +26,10 @@ class NotFoundError(AtriumError):
     pass
 
 
+class NotAcceptable(AtriumError):
+    pass
+
+
 class NetworkError(AtriumError):
     pass
 
