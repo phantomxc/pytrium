@@ -231,20 +231,6 @@ class TestUserCrudMethods(unittest.TestCase):
         self.api = Api(key="foo", client_id="bar")
 
     @patch('atrium.Api._makeRequest')
-    def testGetUsersNoParams(self, request_mock):
-        self.api.getUsers()
-
-        request_mock.assert_called_with("users", "GET")
-
-    @patch('atrium.Api._makeRequest')
-    def testGetUsersWithParams(self, request_mock):
-        self.api.getUsers(queryParams={
-            "foo": "bar"
-        })
-
-        request_mock.assert_called_with("users?foo=bar", "GET")
-
-    @patch('atrium.Api._makeRequest')
     def testCreateUser(self, request_mock):
         payload={
             "foo": "bar"

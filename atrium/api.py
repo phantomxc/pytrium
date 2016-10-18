@@ -95,13 +95,6 @@ class Api(object):
     # --------------------------------------------------
     # USER
     # --------------------------------------------------
-    # @cleanData('users')
-    def getUsers(self, queryParams={}):
-        url = "users"
-        url = self._buildQueryParams(url, queryParams)
-
-        return self._makeRequest(url, "GET")
-
     @cleanData('user')
     def createUser(self, payload={}):
         url = "users"
