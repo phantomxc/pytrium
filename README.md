@@ -48,9 +48,12 @@ This client library wraps all the available endpoints of the MX Atrium API. For 
 3. Create a user. See the [Docs](http://atrium.mx.com/documentation) for more options.
   ```python
   user = api.createUser(payload={
-    "first_name": "Charles",
-    "last_name": "Xavier",
-    "email": "professor@mx.com"
+    "identifier": "U123987"
+    "metadata": {
+      "first_name": "Charles",
+      "last_name": "Xavier",
+      "email": "professor@mx.com"
+    }
   })
   ```
 
@@ -70,7 +73,7 @@ This client library wraps all the available endpoints of the MX Atrium API. For 
 6. Create a member for our user with the credentials above. A member is a connection between an institution and a user. Creating a member automatically attempt to authenticate and gather account data (aggregate).
   ```python
   member = api.createMember(user['guid'], payload={
-    "institution_guid": institution['guid'],
+    "institution_code": institution['code'],
     "credentials": [
       {
         "credential_guid": creds[0]['guid'],
@@ -94,7 +97,7 @@ This client library wraps all the available endpoints of the MX Atrium API. For 
   ```json
   {
       "status": "CHALLENGED",
-      "credentials": [
+      "challenges": [
         {
             "type": "TEXT",
             "guid": "CRD-678",
@@ -110,7 +113,7 @@ This client library wraps all the available endpoints of the MX Atrium API. For 
 
   ```python
   api.resumeMemberAgg(user['guid'], member['guid'], payload={
-    "credentials": [
+    "challenges": [
       {
         "credential_guid": "CRD-678",
         "value": "New York"
