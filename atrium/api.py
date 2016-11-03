@@ -26,16 +26,16 @@ class Api(object):
 
     def __init__(self, **kwargs):
 
-        self.key = kwargs.get('key')
-        self.client_id = kwargs.get('client_id')
+        self.key = kwargs.get("key")
+        self.client_id = kwargs.get("client_id")
 
         if not self.key:
-            raise ConfigError('Missing key (MX-API-KEY)')
+            raise ConfigError("Missing key (MX-API-KEY)")
 
         if not self.client_id:
-            raise ConfigError('Missing client_id (MX-CLIENT-ID)')
+            raise ConfigError("Missing client_id (MX-CLIENT-ID)")
 
-        self.root = "https://atrium.mx.com/"
+        self.root = kwargs.get("root", "https://atrium.mx.com/")
 
     def _buildHeaders(self, method):
         headers = {
@@ -171,14 +171,14 @@ class Api(object):
         return self._makeRequest(url, "GET")
 
     @cleanData('institution')
-    def readInstitution(self, instGuid):
-        url = "institutions/{}".format(instGuid)
+    def readInstitution(self, instCode):
+        url = "institutions/{}".format(instCode)
 
         return self._makeRequest(url, "GET")
 
     @cleanData('credentials')
-    def getCredentials(self, instGuid):
-        url = "institutions/{}/credentials".format(instGuid)
+    def getCredentials(self, instCode):
+        url = "institutions/{}/credentials".format(instCode)
 
         return self._makeRequest(url, "GET")
 
