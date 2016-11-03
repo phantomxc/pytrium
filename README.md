@@ -18,7 +18,6 @@ Pytrium is a Python 2/3 client library for the MX Atrium API.
     + [Accounts](#accounts)
     + [Institutions](#institutions)
     + [Members](#members)
-    + [Holdings](#holdings)
   * [Contribute](#contribute)
   * [License](#license)
 
@@ -130,8 +129,6 @@ This client library wraps all the available endpoints of the MX Atrium API. For 
     "results_per_page": 100
   })
 
-  api.getHoldings(user['guid'])
-
   api.getAccounts(user['guid'])
   ```
 
@@ -230,15 +227,6 @@ This client library wraps all the available endpoints of the MX Atrium API. For 
   * **_resumeMemberAgg(userGuid, memGuid, payload={})_**
 
     Resume member aggregation by user GUID and member GUID for when it was challenged. Payload should contain the answered MFA credentials.
-
-### Holdings:
-  * **_getHoldings(userGuid, queryParams={})_**
-
-    Get a list of holdings by user GUID. Supports pagination query parameters.
-
-  * **_readHolding(userGuid, holdGuid)_**
-
-    Read a holding by user GUID and holding GUID.
 
 ## Contribute
 
