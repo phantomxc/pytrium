@@ -47,13 +47,15 @@ This client library wraps all the available endpoints of the MX Atrium API. For 
 
 3. Create a user. See the [Docs](http://atrium.mx.com/documentation) for more options.
   ```python
+  import json
+
   user = api.createUser(payload={
-    "identifier": "U123987"
-    "metadata": {
+    "identifier": "U123987",
+    "metadata": json.dumps({
       "first_name": "Charles",
       "last_name": "Xavier",
       "email": "professor@mx.com"
-    }
+    })
   })
   ```
 
